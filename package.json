@@ -1,6 +1,6 @@
 {
   "name": "search-json-data-client",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "repository": "https://github.com/mordicool/youtube-api-searcher",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
