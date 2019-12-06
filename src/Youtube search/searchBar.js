@@ -1,13 +1,13 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import './searchBar.css'
-const dataSetPromise = fetch(process.env.REACT_APP_YOUTUBE_URL).then(result => result.json());
+const dataSetPromise = fetch(process.env.REACT_APP_YOUTUBE_URL).then(result => result.json())
 
-async function filterResults(searchQuery) {
-    searchQuery = searchQuery.trim();
-    const dataSet = await dataSetPromise;
+async function filterResults (searchQuery) {
+    searchQuery = searchQuery.trim()
+    const dataSet = await dataSetPromise
     return dataSet
         .filter(result => result.title.includes(searchQuery))
-        .slice(0, 10);
+        .slice(0, 10)
 }
 
 function mapSearchResult (result, index, results) {
@@ -19,14 +19,13 @@ function mapSearchResult (result, index, results) {
 }
 
 function SearchBar () {
-
-    const [searchQuery, setSearchQuery] = useState('');
-    const [searchResults, setSearchResults] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('')
+    const [searchResults, setSearchResults] = useState([])
 
     const search = (e) => {
-        e.preventDefault();
-        filterResults(searchQuery).then(setSearchResults);
-    };
+        e.preventDefault()
+        filterResults(searchQuery).then(setSearchResults)
+    }
 
     return (
         <div>
@@ -34,7 +33,7 @@ function SearchBar () {
                 <input type="text" onChange={e => setSearchQuery(e.target.value)} value={searchQuery}/>
                 <button onClick={search}>Please Press ME!!!!</button>
             </form>
-            
+
             <p>{searchQuery.toLowerCase()}</p>
             <ul className="results-list">
                 {searchResults.map(mapSearchResult)}
