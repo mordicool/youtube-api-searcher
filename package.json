@@ -1,7 +1,7 @@
 {
-  "name": "youtube-api-search-client",
-  "version": "0.1.0",
-  "private": true,
+  "name": "search-json-data-client",
+  "version": "0.1.3",
+  "repository": "https://github.com/mordicool/youtube-api-searcher",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
