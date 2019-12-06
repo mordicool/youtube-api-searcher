@@ -5,6 +5,8 @@ import {
 } from 'react-router-dom'
 import './App.css'
 
+import SearchBar from "./Youtube search/searchBar";
+
 function Main () {
   return (
     <h1>
@@ -27,10 +29,12 @@ function App () {
       <ul>
         <li><a href="/">Main</a></li>
         <li><a href="/contact">Concat</a></li>
+        <li><a href="/search">Search</a></li>
       </ul>
       <Router>
         <Route exact path="/" component={Main} />
         <Route path="/contact" component={Contact} />
+        <Route path="/search" component={SearchBar} />
       </Router>
     </div>
   )
